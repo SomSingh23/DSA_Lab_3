@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 bool isValid(string s) {
-stack<char> A;
+stack<char>A;
 int c=0;
 for(int i=0;i<s.size();i++){
-if(s[i]=='(' || s[i]=='{' || s[i]=='['){
+if(s[i]=='('){
 A.push(s[i]);
 }
 else if(s[i]=='*')
@@ -13,14 +13,15 @@ else if(A.empty())
 return false;
 else if(A.top()=='(' && s[i]!=')') 
 return false;
-else if(A.top()=='{' &&  s[i]!='}')
-return false;
-else if(A.top()=='[' &&  s[i]!=']') 
-return false;
 else
 A.pop();
 }
-if(A.size()>0 && A.size()!=c) 
+if(c==s.size())
+{
+    if(c%2==0)
+    return true;
+    return false;
+}else if(A.size()>0 && A.size()!=c ) 
 return false;
 
 return true;
