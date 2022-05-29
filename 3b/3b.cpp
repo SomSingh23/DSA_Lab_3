@@ -55,9 +55,10 @@ using namespace std ;
                                 Push(3);
                                  Push(4);
                                 Push(5);
+                                cout<<"peek value : " ;cout<<peek()<<endl;
                                 cout<<Pop()<<endl;
                                 cout<<Pop()<<endl;
                              cout<<Pop()<<endl;
-                                cout<<peek()<<endl;
+                                
                                 return 0;
                             }
