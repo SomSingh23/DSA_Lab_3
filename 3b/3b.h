@@ -1,16 +1,16 @@
-#include <iostream>
+ #include <iostream>
 using namespace std ;
 class node {
     public:
-    int data ;
+    char data ;
     node *next ;
 };
 class Stack{
     public:
     int static count ;
-    int s ;
+
     node *top;
-    void push(int x){
+    void push(char x){
         if(count==0){count++;top=nullptr;node *ptr = new node ;
         ptr->data = x;
          ptr->next = top ;
@@ -19,7 +19,7 @@ class Stack{
         ptr->data = x;
          ptr->next = top ;
        top = ptr;}
-       s++;
+    
     }
     void display(){
         node *ptr = top;
@@ -30,7 +30,7 @@ class Stack{
         }
         cout<<endl;
     }
-    int Top(){
+    char Top(){
         if(top==NULL)return -1;
         else{return top->data;}
     }
@@ -39,12 +39,23 @@ class Stack{
         node *ptr = top ;
         top=top->next ;
         ptr->next = nullptr ;
-       delete ptr;
-       s--; // delete that node;
+       delete ptr; 
+      // delete that node;
     }
     int size()
     {
-       return s;
+      int s = 0 ;
+      node *ptr = top ;
+      while(ptr!=nullptr){
+          s++;
+          ptr=ptr->next;
+      }
+      return s-1;
+    }
+ bool empty(){
+        if(top==nullptr)return true;
+        else return false ;
     }
 };
 int Stack::count = 0 ;
+
