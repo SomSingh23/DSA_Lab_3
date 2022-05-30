@@ -28,11 +28,11 @@ using namespace std;
                                                 return true;
                                                 }
 
-                                                int main()
+                                                int main(int argc , char *argv[])
                                                 {
-                                                    string test_case;
-                                                    cout<<"Enter Your String"<<endl;
-                                                    cin>>test_case;
+                                                    string test_case = argv[1];
+                                                    // cout<<"Enter Your String"<<endl;
+                                                    // cin>>test_case;
                                                     bool a=matching_parenthesis(test_case);
                                                     if(a==true)
                                                     {
